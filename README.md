@@ -1,70 +1,56 @@
-==================================================================
-Human Activity Recognition Using Smartphones Dataset
-Version 1.0
-==================================================================
-Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
-Smartlab - Non Linear Complex Systems Laboratory
-DITEN - Università degli Studi di Genova.
-Via Opera Pia 11A, I-16145, Genoa, Italy.
-activityrecognition@smartlab.ws
-www.smartlab.ws
-==================================================================
+# coursera_getting_and_cleaning_data
+Course Project files for Coursera Getting and Cleaning Data online course.
 
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+## Introduction
 
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+This repository contains my files for the Course Project for the Coursera "Getting and Cleaning Data" course.
 
-For each record it is provided:
-======================================
+One of the most exciting areas in all of data science right now is wearable computing. 
+Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. 
+The data used for this project represents data collected from accelerometers from the Samsung Galaxy S smartphone. 
 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
+A full description is available at the site where the data was obtained:
 
-The dataset includes the following files:
-=========================================
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-- 'README.txt'
+## Data Sources
 
-- 'features_info.txt': Shows information about the variables used on the feature vector.
+The data source for this project is:
 
-- 'features.txt': List of all features.
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-- 'activity_labels.txt': Links the class labels with their activity name.
+## Course Project Instructions
 
-- 'train/X_train.txt': Training set.
+The Course Project called for creating one R script called 
 
-- 'train/y_train.txt': Training labels.
+    1. Merges the training and the test sets to create one data set.
+    2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+    3. Uses descriptive activity names to name the activities in the data set
+    4. Appropriately labels the data set with descriptive variable names. 
+    5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-- 'test/X_test.txt': Test set.
+## Prerequisites for the run_analysis.R script
 
-- 'test/y_test.txt': Test labels.
+The prerequisites for running this copy of run_analysis.R include:
 
-The following files are available for the train and test data. Their descriptions are equivalent. 
+	1. The UCI HAR Dataset must be extracted to a directory
+	2. The working directory variable (work_dir) in run_analysis.R must be edited to point to the UCI HAR Dataset folder, which in turn should contain the extracted activity and features files, as well as the /train and /test folders and their respective data.
+	
+	For example, on my machine 'work_dir' is set as:
+	work_dir <- "C:/Dropbox/Data Scientist Course/3 - Getting and Cleaning Data/Course Project/UCI HAR Dataset/"
+	
+## Output from the R script
+	
+The output of run_analysis.R is a tidy data file containing the means of all of the columns by test subject, and by activity.
 
-- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+The output was written to a space delimited file called tidy_data.txt included in this repository along with the run_analysis.R script file, this README.md file, and a CodeBook.md file containing information about the contents of the tidy data file.
 
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
+Here is an example of the first several rows and columns of the tidy_data.txt file:
 
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
+Subject           Activity tBodyAcc-mean()-X tBodyAcc-mean()-Y tBodyAcc-mean()-Z tBodyAcc-std()-X tBodyAcc-std()-Y
+1       1             LAYING         0.2215982      -0.040513953        -0.1132036      -0.92805647     -0.836827406
+2       1            SITTING         0.2612376      -0.001308288        -0.1045442      -0.97722901     -0.922618642
+3       1           STANDING         0.2789176      -0.016137590        -0.1106018      -0.99575990     -0.973190056
+...
 
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
-
-Notes: 
-======
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
-
-For more information about this dataset contact: activityrecognition@smartlab.ws
-
-License:
-========
-Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
-
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
-
-This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
-
-Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
+END
