@@ -3,7 +3,7 @@
 Code Book for Coursera Getting and Cleaning Data Course Project
 
 
-# DATA SOURCES AND 
+# DATA SOURCES AND ATTRIBUTIONS
 
 The original source data utilized for this Course Project came from the following source article, which includes all citations / attributions below.
 Note that only the mean() and std() values were extracted and utilized to create the data described above.
