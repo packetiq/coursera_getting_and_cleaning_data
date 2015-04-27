@@ -47,10 +47,10 @@ The output was written to a space delimited file called tidy_data.txt included i
 
 Here is an example of the first several rows and columns of the tidy_data.txt file:
 
-Subject           Activity tBodyAcc-mean()-X tBodyAcc-mean()-Y tBodyAcc-mean()-Z tBodyAcc-std()-X tBodyAcc-std()-Y
-1       1             LAYING         0.2215982      -0.040513953        -0.1132036      -0.92805647     -0.836827406
-2       1            SITTING         0.2612376      -0.001308288        -0.1045442      -0.97722901     -0.922618642
-3       1           STANDING         0.2789176      -0.016137590        -0.1106018      -0.99575990     -0.973190056
-...
+Subject           Activity tBodyAcc-mean()-X tBodyAcc-mean()-Y tBodyAcc-mean()-Z tBodyAcc-std()-X tBodyAcc-std()-Y  
+1       1             LAYING         0.2215982      -0.040513953        -0.1132036      -0.92805647     -0.836827406  
+2       1            SITTING         0.2612376      -0.001308288        -0.1045442      -0.97722901     -0.922618642  
+3       1           STANDING         0.2789176      -0.016137590        -0.1106018      -0.99575990     -0.973190056  
+...  
 
 END
